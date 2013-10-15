@@ -1,14 +1,14 @@
 class BuzzFuzz
   def convert(number)
     String convertNumber=nil
-    Integer i=1
+
     (1..number).each do |x|
-      if x%15==0
+      if buzzFuzzNumber(x)
         convertNumber="#{convertNumber}BuzzFuzz-"
       else
-        if x%3==0
+        if buzzNumber(x)
           convertNumber="#{convertNumber}Buzz-"
-        elsif x%5==0
+        elsif fuzzNumber(x)
           convertNumber="#{convertNumber}Fuzz-"
         else
           convertNumber="#{convertNumber}#{x}-"
@@ -16,5 +16,17 @@ class BuzzFuzz
       end
     end
     convertNumber
+  end
+
+  def fuzzNumber(x)
+    x%5==0
+  end
+
+  def buzzNumber(x)
+    x%3==0
+  end
+
+  def buzzFuzzNumber(x)
+    x%15==0
   end
 end
