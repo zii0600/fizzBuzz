@@ -1,6 +1,6 @@
 class BuzzFuzz
   def convert(number)
-    String convertNumber=nil
+    convertNumber=''
 
     (1..number).each do |x|
       if buzzFuzzNumber(x)
